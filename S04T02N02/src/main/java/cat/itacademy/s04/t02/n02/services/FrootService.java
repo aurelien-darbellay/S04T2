@@ -1,8 +1,8 @@
-package cat.itacademy.s04.t02.n01.services;
+package cat.itacademy.s04.t02.n02.services;
 
-import cat.itacademy.s04.t02.n01.exception.EntityNotFoundException;
-import cat.itacademy.s04.t02.n01.model.Froot;
-import cat.itacademy.s04.t02.n01.repository.FrootRepository;
+import cat.itacademy.s04.t02.n02.exception.EntityNotFoundException;
+import cat.itacademy.s04.t02.n02.model.Froot;
+import cat.itacademy.s04.t02.n02.repository.FrootRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

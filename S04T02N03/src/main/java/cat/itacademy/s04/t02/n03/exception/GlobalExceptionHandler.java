@@ -1,5 +1,6 @@
-package cat.itacademy.s04.t02.n01.exception;
+package cat.itacademy.s04.t02.n03.exception;
 
+import cat.itacademy.s04.t02.n02.exception.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

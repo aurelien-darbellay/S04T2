@@ -1,8 +1,8 @@
-package cat.itacademy.s04.t02.n01.services;
+package cat.itacademy.s04.t02.n03.services;
 
-import cat.itacademy.s04.t02.n01.exception.EntityNotFoundException;
-import cat.itacademy.s04.t02.n01.model.Froot;
-import cat.itacademy.s04.t02.n01.repository.FrootRepository;
+import cat.itacademy.s04.t02.n03.exception.EntityNotFoundException;
+import cat.itacademy.s04.t02.n03.model.Froot;
+import cat.itacademy.s04.t02.n03.repository.FrootRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +22,11 @@ public class FrootService {
         return frootRepository.findAll();
     }
 
-    public Froot getFrootById(Long id) throws EntityNotFoundException {
+    public Froot getFrootById(String id) throws EntityNotFoundException {
         return frootRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(id));
     }
 
-    public Froot updateFroot(Long id, Froot froot) throws EntityNotFoundException {
+    public Froot updateFroot(String id, Froot froot) throws EntityNotFoundException {
         Froot existingFroot = getFrootById(id);
         Froot updateFroot = updateFrootValues(existingFroot, froot);
         return frootRepository.save(updateFroot);
@@ -38,7 +38,7 @@ public class FrootService {
         return existingFroot;
     }
 
-    public void deleteFroot(Long id) throws EntityNotFoundException {
+    public void deleteFroot(String id) throws EntityNotFoundException {
         if (!frootRepository.existsById(id)) {
             throw new EntityNotFoundException(id);
         }

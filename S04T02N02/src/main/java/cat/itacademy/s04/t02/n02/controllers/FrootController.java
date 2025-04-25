@@ -1,8 +1,8 @@
-package cat.itacademy.s04.t02.n01.controllers;
+package cat.itacademy.s04.t02.n02.controllers;
 
-import cat.itacademy.s04.t02.n01.exception.EntityNotFoundException;
-import cat.itacademy.s04.t02.n01.model.Froot;
-import cat.itacademy.s04.t02.n01.services.FrootService;
+import cat.itacademy.s04.t02.n02.exception.EntityNotFoundException;
+import cat.itacademy.s04.t02.n02.model.Froot;
+import cat.itacademy.s04.t02.n02.services.FrootService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
