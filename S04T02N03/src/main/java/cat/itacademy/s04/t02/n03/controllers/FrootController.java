@@ -26,17 +26,17 @@ public class FrootController {
     }
 
     @GetMapping("/{id}")
-    public Froot getFrootById(@PathVariable Long id) throws EntityNotFoundException {
+    public Froot getFrootById(@PathVariable String id) throws EntityNotFoundException {
         return frootService.getFrootById(id);
     }
 
     @PutMapping("/{id}")
-    public Froot updateFroot(@PathVariable Long id, @RequestBody Froot froot) throws EntityNotFoundException {
+    public Froot updateFroot(@PathVariable String id, @RequestBody Froot froot) throws EntityNotFoundException {
         return frootService.updateFroot(id, froot);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteFroot(@PathVariable Long id) throws EntityNotFoundException {
+    public void deleteFroot(@PathVariable String id) throws EntityNotFoundException {
         frootService.deleteFroot(id);
     }
 }
