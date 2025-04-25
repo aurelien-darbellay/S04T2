@@ -1,6 +1,6 @@
 package cat.itacademy.s04.t02.n01.services;
 
-import cat.itacademy.s04.t02.n01.exception.AbsentEntityException;
+import cat.itacademy.s04.t02.n01.exception.EntityNotFoundException;
 import cat.itacademy.s04.t02.n01.model.Froot;
 import cat.itacademy.s04.t02.n01.repository.FrootRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +20,8 @@ public class FrootService {
     public List<Froot> getAllFroots(){
         return frootRepository.findAll();
     }
-    public Froot getFrootById(Long id) throws AbsentEntityException {
-        return frootRepository.findById(id).orElseThrow(()->new AbsentEntityException(id));
+    public Froot getFrootById(Long id) throws EntityNotFoundException {
+        return frootRepository.findById(id).orElseThrow(()->new EntityNotFoundException(id));
     }
     public Froot updateFroot(Long id, Froot froot) {
         froot.setId(id);

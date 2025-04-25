@@ -1,14 +1,17 @@
 package cat.itacademy.s04.t02.n01.exception;
 
-import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@ControllerAdvice
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler({AbsentEntityException.class})
-    public void handleAbsentEntity(AbsentEntityException e){
-        System.out.println(e.getMessage());
+    @ExceptionHandler(EntityNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public String handleNotFound(EntityNotFoundException e){
+        return e.getMessage();
     }
 
 }

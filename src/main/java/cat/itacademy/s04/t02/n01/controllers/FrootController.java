@@ -1,6 +1,6 @@
 package cat.itacademy.s04.t02.n01.controllers;
 
-import cat.itacademy.s04.t02.n01.exception.AbsentEntityException;
+import cat.itacademy.s04.t02.n01.exception.EntityNotFoundException;
 import cat.itacademy.s04.t02.n01.model.Froot;
 import cat.itacademy.s04.t02.n01.services.FrootService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ import java.util.List;
         }
 
         @GetMapping("/{id}")
-        public Froot getFrootById(@PathVariable Long id) throws AbsentEntityException {
+        public Froot getFrootById(@PathVariable Long id) throws EntityNotFoundException {
             return frootService.getFrootById(id);
         }
 
